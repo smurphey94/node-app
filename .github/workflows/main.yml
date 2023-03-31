@@ -1,0 +1,14 @@
+name: myapp
+on: push
+jobs:
+  build-and-deply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code 
+        uses: actions/checkout@v2
+      - name: setup Nodesjs 
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: install dependencies 
+        run: npm install
